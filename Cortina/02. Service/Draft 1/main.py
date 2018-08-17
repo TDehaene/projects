@@ -77,7 +77,17 @@ def predict():
                 y_classes = list(zip(classes, y_prob[0]))
                 sorted_by_second = sorted(y_classes, key=lambda tup: tup[1], reverse=True)
 
-        return sorted_by_second[0][0]
+                sorted_by_second_plus10 = [x for x in sorted_by_second if x[1] >= 0.1]
+
+                probstring = ""
+                for s in sorted_by_second_plus10:
+                    probstring += s[0] + " (" + str(s[1]*100)[:4]  +"%)"
+                    probstring += "  -  "
+
+                probstring = probstring.strip("  -  ")
+
+
+        return probstring
 
 
 @app.errorhandler(500)
