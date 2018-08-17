@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+Cortina/00. Data/ProductCategory.zip
+*.JPG
+Cortina/00. Data/ProductGender.zip
+Cortina/00. Data/ProductType.zip
